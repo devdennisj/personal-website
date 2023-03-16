@@ -2,11 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title='Welcome to Astro.'>
+<Layout title='Dennis Johansson'>
   <main>
     <div class='image-wrapper'>
       <img src='/Logo.svg' alt='Logo' />
     </div>
+
+    <article class='about-me'>
+      <h2>About me</h2>
+      <p>
+        Collector of sideprojects on a quest to finish more of them in 2023. I
+        mainly use a tech stack consisting of React, Typescript, NextJS and
+        Tailwind with Supabase as a backend.
+      </p>
+      <p>
+        When I'm not busy coding I collect an ever growing pile of books.
+        Currently I'm reading books that inspire the world building of several
+        of my writing projects.
+      </p>
+    </article>
     <footer>
       <ul>
         <li><a href='mailto:dev@dennisj.se'>dev@dennisj.se</a></li>
@@ -21,14 +35,15 @@ import Layout from '../layouts/Layout.astro';
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    max-width: 1500px;
+    margin: auto;
   }
 
   .image-wrapper {
     display: flex;
     flex-direction: row;
-    flex-grow: 1;
-    padding-left: 100px;
+    padding-top: 175px;
+    padding-left: 150px;
   }
 
   @media (max-width: 1250px) {
@@ -38,9 +53,15 @@ import Layout from '../layouts/Layout.astro';
   }
 
   footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top: 1px solid #252525;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #ffffe0;
   }
 
   footer > ul {
@@ -49,7 +70,19 @@ import Layout from '../layouts/Layout.astro';
   }
 
   ul > li {
-    padding: 30px;
+    padding: 15px 30px;
     font-family: 'Baskerville, serif';
+  }
+
+  .about-me {
+    padding: 175px;
+    padding-top: 250px;
+  }
+
+  h2 {
+    font-family: 'Baskerville, serif';
+    font-size: 40px;
+    font-weight: 400;
+    padding-bottom: 30px;
   }
 </style>
